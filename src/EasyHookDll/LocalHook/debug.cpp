@@ -69,17 +69,17 @@ typedef LONG ZwQueryObject_PROC(
             ULONG InInfoSize,
             PULONG OutRequiredSize);
 
-typedef struct _DBG_CLIENT_ID
+typedef struct _CLIENT_ID
 {
     DWORD	    UniqueProcess;
     DWORD	    UniqueThread;
-}DBG_CLIENT_ID, * PDBG_CLIENT_ID;
+}CLIENT_ID, * PCLIENT_ID;
 
 typedef struct _THREAD_BASIC_INFORMATION
 {
     LONG ExitStatus;
     PNT_TIB TebBaseAddress;
-    DBG_CLIENT_ID ClientId;
+    CLIENT_ID ClientId;
     DWORD AffinityMask;
     LONG Priority;
     LONG BasePriority;
